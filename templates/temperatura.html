@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}Conversor{% endblock %}
+
+{% block body %}
+<div class="container text-center mt-4">
+    <form action="/temperatura" method="post">
+        <p>Insira o valor a ser convertido</p>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="valor" placeholder="" type="text">
+        </div>
+        
+        {% if erro %}
+        <div class="alert alert-danger mt-3">{{ erro }}</div>
+        {% endif %}
+
+        <div class="mb-3">
+            <label for="unidade">Converter de:</label>
+            <select class="form-control mx-auto w-auto" name="unidade">
+                {% for unidade in unidades %}
+                    <option value="{{ unidade }}">{{ unidade }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="unidade_convertida">Converter para:</label>
+            <select class="form-control mx-auto w-auto" name="unidade_convertida">
+                
+                {% for unidade in unidades %}
+                    <option value="{{ unidade }}">{{ unidade }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Converter</button>
+    </form>
+</div>
+{% endblock %}

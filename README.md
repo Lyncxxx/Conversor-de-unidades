@@ -1,5 +1,4 @@
 # Unit Converter  
-#### Video Demo: [https://youtu.be/o5uSW2_5FaQ](https://youtu.be/o5uSW2_5FaQ)  
 
 ## Table of Contents
 - [Overview](#overview)

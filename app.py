@@ -37,7 +37,7 @@ def peso():
         unidade_convertida = request.form.get("unidade_convertida")
         valor_convertido = converter_peso(valor, unidade, unidade_convertida)
         return render_template('resultado.html', valor=valor, unidade_origem=unidade, 
-                               resultado=valor_convertido, unidade_destino=unidade_convertida)
+                            resultado=valor_convertido, unidade_destino=unidade_convertida)
     
     return render_template("peso.html", unidades=unidades_de_peso, active_page="peso")
 
@@ -55,9 +55,9 @@ def temperatura():
         unidade_convertida = request.form.get("unidade_convertida")
         valor_convertido = converter_temperatura(valor, unidade, unidade_convertida)
         return render_template('resultado.html', valor=valor, unidade_origem=unidade, 
-                               resultado=valor_convertido, unidade_destino=unidade_convertida)
+                            resultado=valor_convertido, unidade_destino=unidade_convertida)
 
     return render_template("temperatura.html", unidades=unidades_de_temperatura, active_page="temperatura")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()

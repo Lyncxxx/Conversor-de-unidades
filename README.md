@@ -1,8 +1,16 @@
-# Unit Converter  
+# Unit Converter
+
+🔗 **Live Demo:** https://conversor-de-unidades-x3ff.onrender.com/
+
+A Flask-based web application that converts between different units of measurement across three categories: **length**, **weight**, and **temperature**.
+
+---
 
 ## Table of Contents
+
 - [Overview](#overview)
 - [Features](#features)
+- [Technologies](#technologies)
 - [Supported Units](#supported-units)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -10,153 +18,224 @@
 - [Conversion Formulas](#conversion-formulas)
 - [Error Handling](#error-handling)
 - [License](#license)
-- [Contact](#contact)
+- [Author](#author)
+
+---
 
 ## Overview
-A Flask-based web application that converts between different units of measurement across three categories: length, weight, and temperature.
+
+Unit Converter is a web application built with **Flask** that allows users to convert values between different units of measurement. It currently supports conversions for **length**, **weight**, and **temperature**, featuring a clean interface and input validation.
+
+---
 
 ## Features
-- **Three Conversion Categories**:
-  - 📏 Length (metric and imperial)
-  - ⚖️ Weight (metric and imperial)
-  - 🌡️ Temperature (Celsius, Fahrenheit, Kelvin)
-- **Input Validation**:
-  - Checks for numeric inputs
-  - Provides clear error messages
-- **User-Friendly Interface**:
-  - Clean, responsive design
-  - Easy navigation between categories
-- **Real-Time Results**:
-  - Instant conversion display
-  - Accurate calculations
+
+- 📏 Convert between metric and imperial length units
+- ⚖️ Convert between metric weight units
+- 🌡️ Convert temperatures between Celsius, Fahrenheit and Kelvin
+- ✅ Input validation with user-friendly error messages
+- ⚡ Instant conversion results
+- 📱 Responsive and easy-to-use interface
+
+---
+
+## Technologies
+
+- Python
+- Flask
+- HTML5
+- CSS3
+- Jinja2
+
+---
 
 ## Supported Units
 
 ### Length
-| Unit | Description          |
-|------|----------------------|
-| km   | Kilometer            |
-| m    | Meter                |
-| dm   | Decimeter            |
-| cm   | Centimeter           |
-| mm   | Millimeter           |
-| μm   | Micrometer           |
-| nm   | Nanometer            |
-| mi   | Mile                 |
-| yd   | Yard                 |
-| ft   | Foot                 |
-| in   | Inch                 |
+
+| Unit | Description |
+|------|-------------|
+| km | Kilometer |
+| m | Meter |
+| dm | Decimeter |
+| cm | Centimeter |
+| mm | Millimeter |
+| μm | Micrometer |
+| nm | Nanometer |
+| mi | Mile |
+| yd | Yard |
+| ft | Foot |
+| in | Inch |
 
 ### Weight
-| Unit | Description          |
-|------|----------------------|
-| t    | Metric ton           |
-| kg   | Kilogram             |
-| g    | Gram                 |
-| mg   | Milligram            |
+
+| Unit | Description |
+|------|-------------|
+| t | Metric ton |
+| kg | Kilogram |
+| g | Gram |
+| mg | Milligram |
 
 ### Temperature
-| Unit | Description          |
-|------|----------------------|
-| °C   | Celsius              |
-| °F   | Fahrenheit           |
-| K    | Kelvin               |
+
+| Unit | Description |
+|------|-------------|
+| °C | Celsius |
+| °F | Fahrenheit |
+| K | Kelvin |
+
+---
 
 ## Installation
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/unit-converter.git
-   cd unit-converter
+1. **Clone the repository**
 
-2. **Create virtual environment (recommended)**:
-    ```bash
-    python -m venv venv
-    # Linux/Mac:
-    source venv/bin/activate
-    # Windows:
-    venv\Scripts\activate
+```bash
+git clone https://github.com/Lyncxxx/Conversor-de-unidades.git
+cd Conversor-de-unidades
+```
 
-3. **Install the dependecies**
-    ```bash
-    pip install flask
+2. **Create a virtual environment (recommended)**
+
+```bash
+python -m venv venv
+```
+
+**Windows**
+
+```bash
+venv\Scripts\activate
+```
+
+**Linux / macOS**
+
+```bash
+source venv/bin/activate
+```
+
+3. **Install the dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+---
 
 ## Usage
-1. **Run the application**:
-    ```bash
-    python app.py
 
-2. **Access the web interface**:
-    Open your browser and navigate to: http://localhost:5000
-    
-3. **Perform conversions**:
+1. Start the application:
 
-    - Select conversion category
+```bash
+python app.py
+```
 
-    - Enter the value to convert
+2. Open your browser and visit:
 
-    - Choose source and target units
+```
+http://localhost:5000
+```
 
-    - Click "Convert" button
+3. Select:
+
+- Conversion category
+- Source unit
+- Destination unit
+- Value to convert
+
+The result will be displayed instantly.
+
+---
 
 ## Project Structure
-unit-converter/
-├── app.py                 # Main Flask application
-├── converter.py           # Conversion logic
-├── requirements.txt       # Dependencies
+
+```text
+Conversor-de-unidades/
+├── app.py
+├── conversor.py
+├── requirements.txt
+├── Procfile
 ├── templates/
-│   ├── base.html          # Base template
-│   ├── index.html         # Length converter
-│   ├── weight.html        # Weight converter
-│   ├── temperature.html   # Temperature converter
-│   └── result.html        # Results page
+│   ├── base.html
+│   ├── index.html
+│   ├── peso.html
+│   ├── temperatura.html
+│   └── resultado.html
 └── static/
-    └── styles.css         # CSS styles
+    └── style.css
+```
+
+---
 
 ## Conversion Formulas
+
 ### Temperature
-- **Celsius to Fahrenheit:**
+
+- Celsius → Fahrenheit
+
+```
 °F = (°C × 9/5) + 32
+```
 
-- **Fahrenheit to Celsius:**
-°C = (°F - 32) × 5/9
+- Fahrenheit → Celsius
 
-- **Celsius to Kelvin:**
+```
+°C = (°F − 32) × 5/9
+```
+
+- Celsius → Kelvin
+
+```
 K = °C + 273.15
+```
 
 ### Length
-- **Metric conversions:**
-Based on decimal scaling (1km = 1000m, 1m = 100cm, etc.)
 
-- **Imperial conversions:**
+Metric conversions are based on decimal scaling.
 
-    - 1 mile = 1760 yards
+Examples:
 
-    - 1 yard = 3 feet
+- 1 km = 1000 m
+- 1 m = 100 cm
+- 1 cm = 10 mm
 
-    - 1 foot = 12 inches
+Imperial conversions include:
+
+- 1 mile = 1760 yards
+- 1 yard = 3 feet
+- 1 foot = 12 inches
 
 ### Weight
-- **Metric conversions**:
-Based on decimal scaling (1t = 1000kg, 1kg = 1000g, etc.)
+
+Metric conversions are based on decimal scaling.
+
+Examples:
+
+- 1 t = 1000 kg
+- 1 kg = 1000 g
+- 1 g = 1000 mg
+
+---
 
 ## Error Handling
-The application includes robust error handling for:
 
-- Non-numeric inputs
+The application validates user input and handles:
 
-- Invalid unit combinations
+- Invalid numeric values
+- Unsupported unit combinations
+- Temperature conversion edge cases
 
-- Edge cases in temperature conversions
+Whenever an invalid value is entered, a clear error message is displayed to help the user correct the input.
 
-Error messages are displayed clearly to help users correct their inputs.
+---
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Contact
-For questions or feedback, please contact:
+This project is licensed under the MIT License.
 
-Email: lynconlima00@gmail.com
+---
 
-GitHub: github.com/Lyncxxx
+## Author
+
+**Lyncon Lima**
+
+GitHub: https://github.com/Lyncxxx
